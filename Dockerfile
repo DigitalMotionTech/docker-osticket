@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.3
 
-FROM php:8.1-fpm-alpine3.16
+FROM php:8.3-fpm-alpine3.21
 RUN set -ex; \
     \
     export CFLAGS="${PHP_CFLAGS:?}"; \
@@ -62,7 +62,7 @@ RUN set -ex; \
 # DO NOT FORGET TO CHECK THE LANGUAGE PACK DOWNLOAD URL BELOW
 # DO NOT FORGET TO UPDATE "image-version" FILE
 ENV OSTICKET_VERSION=1.17.5 \
-    OSTICKET_SHA256SUM=a9d64b67008c64ae2009ee8abda7354c34ff4486666f931d3012988dd6538bc9
+    OSTICKET_SHA256SUM=8ce3e56d31e440abc41b0ef872914c803a7c1b5d9dfd455e425427cb123e9f8c
 RUN --mount=type=bind,source=utils/verify-plugin.php,target=/tmp/verify-plugin.php,readonly \
     \
     set -ex; \
