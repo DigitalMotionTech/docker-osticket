@@ -18,6 +18,7 @@ RUN set -ex; \
         nginx \
         openldap \
         runit \
+        openssl \
     ; \
     \
     # Build dependencies
@@ -29,6 +30,8 @@ RUN set -ex; \
         libpng-dev \
         libzip-dev \
         openldap-dev \
+        openssl-dev \
+        linux-headers \
     ; \
     \
     # Install PHP extensions
