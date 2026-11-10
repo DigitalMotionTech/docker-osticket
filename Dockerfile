@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.3
 
-FROM php:8.3-fpm-alpine3.21
+FROM php:8.3-fpm-alpine
 RUN set -ex; \
     \
     export CFLAGS="${PHP_CFLAGS:?}"; \
