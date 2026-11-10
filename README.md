@@ -9,7 +9,7 @@ Docker image for running version 1.17 of [osTicket](http://osticket.com/).
 and later have plugin-related breaking changes.**
 
 This image has been created from the original docker-osticket image by
-[Petter A. Helset](mailto:petter@helset.eu).
+[Petter A. Helset](mailto:petter@helset.eu)
 
 It has a few modifications:
 
@@ -43,7 +43,7 @@ docker run -d \
 Now run this image and link the MySQL container.
 
 ```bash
-docker run -d --name osticket --link osticket_mysql:mysql -p 8080:80 devinsolutions/osticket
+docker run -d --name osticket --link osticket_mysql:mysql -p 8080:80 digitalmotion/osticket
 ```
 
 Wait for the installation to complete then browse to your osTicket staff control panel at
@@ -67,7 +67,7 @@ docker run -d \
     --link osticket_mysql:mysql \
      --name osticket\
      -p 8080:80 \
-     devinsolutions/osticket
+     digitalmotion/osticket
 ```
 
 Note (2): osTicket automatically redirects `http://localhost:8080/scp` to `http://localhost/scp/`.
@@ -312,5 +312,5 @@ are also appreciated!
 
 # License
 
-This image and source code is made available under the MIT licence. See the LICENSE file for
+This image and source code is made available under the MIT license. See the LICENSE file for
 details.
