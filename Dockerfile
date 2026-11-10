@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.3
 
-FROM php:8.1-fpm-alpine3.16
+FROM php:8.3-fpm-alpine3.21
 RUN set -ex; \
     \
     export CFLAGS="${PHP_CFLAGS:?}"; \
@@ -18,6 +18,7 @@ RUN set -ex; \
         nginx \
         openldap \
         runit \
+        openssl \
     ; \
     \
     # Build dependencies
@@ -29,6 +30,8 @@ RUN set -ex; \
         libpng-dev \
         libzip-dev \
         openldap-dev \
+        openssl-dev \
+        linux-headers \
     ; \
     \
     # Install PHP extensions
@@ -61,8 +64,8 @@ RUN set -ex; \
     rm -rf /tmp/pear /var/cache/apk/*
 # DO NOT FORGET TO CHECK THE LANGUAGE PACK DOWNLOAD URL BELOW
 # DO NOT FORGET TO UPDATE "image-version" FILE
-ENV OSTICKET_VERSION=1.17.5 \
-    OSTICKET_SHA256SUM=a9d64b67008c64ae2009ee8abda7354c34ff4486666f931d3012988dd6538bc9
+ENV OSTICKET_VERSION=1.17.8 \
+    OSTICKET_SHA256SUM=32072b24c3bf96a19a485703d86321c9ee8ff9a41a4f6bf3825a5b4fc1f26f7c
 RUN --mount=type=bind,source=utils/verify-plugin.php,target=/tmp/verify-plugin.php,readonly \
     \
     set -ex; \
